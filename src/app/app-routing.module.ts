@@ -4,6 +4,7 @@ import { MostPopularComponent } from './pages/mostpopular/mostpopular.component'
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { TopRatedComponent } from './pages/top-rated/top-rated.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   { 
     path: "upcoming", 
     component: UpComingComponent 
+  },
+  { 
+    path: "toprated", 
+    component: TopRatedComponent 
   },
   { 
     path: "details/:name", 

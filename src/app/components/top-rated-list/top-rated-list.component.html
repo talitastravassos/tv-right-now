@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <h2 class="display-2 text-center jumbotron-fluid"> Top Rated </h2>
+    <div class="row justify-content-center">
+        <div class="card col-lg-5 col-10 m-3" *ngFor="let show of topRatedList" [routerLink]="['/details', show.name]">
+            <div class="row no-gutters">
+                <div class="col-md-4  m-auto">
+                    <img src="{{ getImage(show.poster_path) }}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{show.name}}</h5>
+                        <p class="card-text module line-clamp">{{ show.overview }}</p>
+                        <p class="card-text m-0"><small class="text-muted">Country: <span
+                                    *ngFor="let country of show.origin_country"> {{ country }} </span></small></p>
+                        <p class="card-text m-0"><small class="text-muted">Popularity: {{ show.popularity}}</small></p>
+                        <p class="card-text"><small class="text-muted">Notes: {{ show.vote_average}} | Votes:
+                                {{ show.vote_count }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

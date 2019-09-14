@@ -17,11 +17,14 @@ export class TvshowsService {
 
   getMostPopular(){
     return this.http.get(`${this.url}popular?api_key=${this.api_key}`)
-
   }
 
   getUpComing(){
     return this.http.get(`${this.url}on_the_air?api_key=${this.api_key}`)
+  }
+
+  getTopRated(){
+    return this.http.get(`${this.url}top_rated?api_key=${this.api_key}`)
   }
 
 
