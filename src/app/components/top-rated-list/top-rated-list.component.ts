@@ -16,6 +16,10 @@ export class TopRatedListComponent implements OnInit {
     return "https://image.tmdb.org/t/p/w500" + path
   }
 
+  getNameWithoutSpace(name){
+    return name.replace(/\s/g, '')
+  }
+
   ngOnInit() {
     this.tvshowService.getTopRated()
       .subscribe( (res: any) => {

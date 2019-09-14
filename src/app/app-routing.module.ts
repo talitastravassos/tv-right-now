@@ -25,7 +25,7 @@ const routes: Routes = [
     component: TopRatedComponent 
   },
   { 
-    path: "details/:name", 
+    path: "details/:name/:id", 
     component: DetailsComponent
   }
 ];

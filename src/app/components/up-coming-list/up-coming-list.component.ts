@@ -17,6 +17,10 @@ export class UpComingListComponent implements OnInit {
     return "https://image.tmdb.org/t/p/w500" + path
   }
 
+  getNameWithoutSpace(name){
+    return name.replace(/\s/g, '')
+  }
+
   ngOnInit() {
     this.tvshowService.getUpComing()
       .subscribe( (res: any) => {
