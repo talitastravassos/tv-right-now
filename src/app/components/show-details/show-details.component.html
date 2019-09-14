@@ -6,9 +6,23 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{ show.name }} ({{ stringToDate(show.first_air_date) | dfnsFormat: 'yyyy' }}) </h5>
-                    <p class="card-text">{{ show.overview }}</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h2 class="card-title">{{ show.name }} ({{ stringToDate(show.first_air_date) | dfnsFormat: 'yyyy' }}) </h2>
+                    <p class="card-text mb-4">{{ show.overview }}</p>
+                    <p class="card-text">Premiered: {{ stringToDate(show.first_air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
+                    <p class="card-text">Popularity: {{ show.popularity }} </p>
+                    <p class="card-text">Vote Average: {{ show.vote_average }} | Votes: {{ show.vote_count }} </p>
+                    <p class="card-text">Genres: <span class="badge badge-dark ml-1" *ngFor="let genre of show.genres"> {{ genre.name }} </span> </p>
+
+                    <p class="card-text">Created by: <span *ngFor="let creator of show.created_by">{{ creator.name }} </span> </p>
+                    <p class="card-text">Episode Run Time: {{ show.episode_run_time[0] }} minutes </p>
+                    <p class="card-text">Language: {{ show.languages[0] }} </p>
+                    <p class="card-text">Country: {{ show.origin_country[0]}} </p>
+
+                    <p class="card-text">Status: {{ show.status }} </p>
+                    <p class="card-text">Total of Episodes: {{ show.number_of_episodes }} episodes </p>
+                    <p class="card-text">Total of Seasons: {{ show.number_of_seasons }} seasons </p>
+                    <p class="card-text">Last Air Date: {{ stringToDate(show.last_air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
+                    <p class="card-text">Network: {{ show.networks[0].name }} </p>
                 </div>
             </div>
         </div>
