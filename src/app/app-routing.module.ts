@@ -1,3 +1,4 @@
+import { DetailsComponent } from './pages/details/details.component';
 import { UpComingComponent } from './pages/upcoming/upcoming.component';
 import { MostPopularComponent } from './pages/mostpopular/mostpopular.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,10 @@ const routes: Routes = [
   { 
     path: "upcoming", 
     component: UpComingComponent 
+  },
+  { 
+    path: "details/:name", 
+    component: DetailsComponent
   }
 ];
 
