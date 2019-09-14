@@ -1,5 +1,5 @@
-import { UpcomingComponent } from './pages/upcoming/upcoming.component';
-import { MostpopularComponent } from './pages/mostpopular/mostpopular.component';
+import { UpComingComponent } from './pages/upcoming/upcoming.component';
+import { MostPopularComponent } from './pages/mostpopular/mostpopular.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   { 
     path: "mostpopular", 
-    component: MostpopularComponent 
+    component: MostPopularComponent 
   },
   { 
     path: "upcoming", 
-    component: UpcomingComponent 
+    component: UpComingComponent 
   }
 ];
 

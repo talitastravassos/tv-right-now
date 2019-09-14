@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MostpopularComponent } from './pages/mostpopular/mostpopular.component';
-import { UpcomingComponent } from './pages/upcoming/upcoming.component';
+import { MostPopularComponent } from './pages/mostpopular/mostpopular.component';
+import { UpComingComponent } from './pages/upcoming/upcoming.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,8 +20,8 @@ import { UpComingListComponent } from './components/up-coming-list/up-coming-lis
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    MostpopularComponent,
-    UpcomingComponent,
+    MostPopularComponent,
+    UpComingComponent,
     AiringTodayListComponent,
     MostPopularListComponent,
     UpComingListComponent

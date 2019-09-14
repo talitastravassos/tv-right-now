@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './mostpopular.component.html',
   styleUrls: ['./mostpopular.component.css']
 })
-export class MostpopularComponent implements OnInit {
+export class MostPopularComponent implements OnInit {
 
   constructor() { }
 
