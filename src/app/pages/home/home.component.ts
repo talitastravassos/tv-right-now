@@ -11,10 +11,10 @@ export class HomeComponent implements OnInit {
   constructor(private tvShowServive: TvshowsService) { }
 
   ngOnInit() {
-    this.tvShowServive.getAiringToday()
-      .subscribe( (res: any) => {
-        console.log(res)
-      })
+    // this.tvShowServive.getAiringToday()
+    //   .subscribe( (res: any) => {
+    //     console.log(res)
+    //   })
   }
 
 }
