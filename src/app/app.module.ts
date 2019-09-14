@@ -17,6 +17,7 @@ import { UpComingListComponent } from './components/up-coming-list/up-coming-lis
 import { TopRatedComponent } from './pages/top-rated/top-rated.component';
 import { TopRatedListComponent } from './components/top-rated-list/top-rated-list.component';
 import { ShowDetailsComponent } from './components/show-details/show-details.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ShowDetailsComponent } from './components/show-details/show-details.com
     UpComingListComponent,
     TopRatedComponent,
     TopRatedListComponent,
-    ShowDetailsComponent
+    ShowDetailsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
