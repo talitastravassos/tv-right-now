@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-upcoming',
+  selector: 'upcoming',
   templateUrl: './upcoming.component.html',
   styleUrls: ['./upcoming.component.css']
 })

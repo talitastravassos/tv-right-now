@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AiringTodayListComponent } from './components/airing-today-list/airing-today-list.component';
 import { MostPopularListComponent } from './components/most-popular-list/most-popular-list.component';
+import { UpComingListComponent } from './components/up-coming-list/up-coming-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MostPopularListComponent } from './components/most-popular-list/most-po
     MostpopularComponent,
     UpcomingComponent,
     AiringTodayListComponent,
-    MostPopularListComponent
+    MostPopularListComponent,
+    UpComingListComponent
   ],
   imports: [
     BrowserModule,
