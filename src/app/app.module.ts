@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AiringTodayListComponent } from './components/airing-today-list/airing-today-list.component';
+import { MostPopularListComponent } from './components/most-popular-list/most-popular-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AiringTodayListComponent } from './components/airing-today-list/airing-
     HomeComponent,
     MostpopularComponent,
     UpcomingComponent,
-    AiringTodayListComponent
+    AiringTodayListComponent,
+    MostPopularListComponent
   ],
   imports: [
     BrowserModule,
