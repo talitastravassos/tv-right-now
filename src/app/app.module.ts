@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DateFnsModule } from 'ngx-date-fns';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import { DetailsComponent } from './pages/details/details.component';
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    DateFnsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

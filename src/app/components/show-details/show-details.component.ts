@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import parse from 'date-fns/parse'
 
 @Component({
   selector: 'show-details',
@@ -10,12 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ShowDetailsComponent implements OnInit {
 
   id: number
-  show: any = {}
+  show: any
 
   constructor(
     private tvshowService: TvshowsService,
-    private activateRoute: ActivatedRoute,
-    private route: Router) { }
+    private activateRoute: ActivatedRoute) { }
 
   getShow(id){
     this.tvshowService.getDetails(id)
@@ -27,6 +27,10 @@ export class ShowDetailsComponent implements OnInit {
   
   getImage(path){
     return "https://image.tmdb.org/t/p/w780" + path
+  }
+
+  stringToDate(string){
+    return parse(string, 'yyyy-mm-dd', new Date())
   }
 
   ngOnInit() {

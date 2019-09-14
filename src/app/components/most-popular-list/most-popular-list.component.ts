@@ -1,3 +1,4 @@
+import parse from 'date-fns/parse';
 import { Component, OnInit } from '@angular/core';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 
@@ -19,6 +20,10 @@ export class MostPopularListComponent implements OnInit {
 
   getNameWithoutSpace(name){
     return name.replace(/\s/g, '')
+  }
+
+  stringToDate(string){
+    return parse(string, 'yyyy-mm-dd', new Date())
   }
 
   ngOnInit() {

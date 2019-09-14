@@ -1,5 +1,6 @@
 import { TvshowsService } from './../../services/tvshows/tvshows.service';
 import { Component, OnInit } from '@angular/core';
+import parse from 'date-fns/parse'
 
 @Component({
   selector: 'airing-today-list',
@@ -18,6 +19,10 @@ export class AiringTodayListComponent implements OnInit {
 
   getNameWithoutSpace(name){
     return name.replace(/\s/g, '')
+  }
+
+  stringToDate(string){
+    return parse(string, 'yyyy-mm-dd', new Date())
   }
 
   ngOnInit() {

@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{show.name}}</h5>
+                        <h5 class="card-title">{{show.name}} ({{ stringToDate(show.first_air_date) | dfnsFormat: 'yyyy' }})</h5>
                         <p class="card-text module line-clamp">{{ show.overview }}</p>
                         <p class="card-text m-0"><small class="text-muted">Country: <span
                                     *ngFor="let country of show.origin_country"> {{ country }} </span></small></p>
