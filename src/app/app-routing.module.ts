@@ -1,10 +1,10 @@
-import { DetailsComponent } from './pages/details/details.component';
 import { UpComingComponent } from './pages/upcoming/upcoming.component';
 import { MostPopularComponent } from './pages/mostpopular/mostpopular.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { TopRatedComponent } from './pages/top-rated/top-rated.component';
+import { ShowDetailsComponent } from './components/show-details/show-details.component';
 
 
 const routes: Routes = [
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   { 
     path: "details/:name/:id", 
-    component: DetailsComponent
+    component: ShowDetailsComponent
   }
 ];
 

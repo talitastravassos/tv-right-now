@@ -14,9 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AiringTodayListComponent } from './components/airing-today-list/airing-today-list.component';
 import { MostPopularListComponent } from './components/most-popular-list/most-popular-list.component';
 import { UpComingListComponent } from './components/up-coming-list/up-coming-list.component';
-import { DetailsComponent } from './pages/details/details.component';
 import { TopRatedComponent } from './pages/top-rated/top-rated.component';
 import { TopRatedListComponent } from './components/top-rated-list/top-rated-list.component';
+import { ShowDetailsComponent } from './components/show-details/show-details.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,9 @@ import { TopRatedListComponent } from './components/top-rated-list/top-rated-lis
     AiringTodayListComponent,
     MostPopularListComponent,
     UpComingListComponent,
-    DetailsComponent,
     TopRatedComponent,
-    TopRatedListComponent
+    TopRatedListComponent,
+    ShowDetailsComponent
   ],
   imports: [
     BrowserModule,
