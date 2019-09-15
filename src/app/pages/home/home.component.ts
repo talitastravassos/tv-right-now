@@ -8,13 +8,17 @@ import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 })
 export class HomeComponent implements OnInit {
 
+  airingToday: any[]
+  title: string = "TV Shows Airing Today"
+
   constructor(private tvShowServive: TvshowsService) { }
 
   ngOnInit() {
-    // this.tvShowServive.getAiringToday()
-    //   .subscribe( (res: any) => {
-    //     console.log(res)
-    //   })
+    this.tvShowServive.getAiringToday()
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.airingToday = res.results
+      })
   }
 
 }

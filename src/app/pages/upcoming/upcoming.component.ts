@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 
 @Component({
   selector: 'upcoming',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpComingComponent implements OnInit {
 
-  constructor() { }
+  upComing: any[]
+  title: string = "Up Coming This Week"
+
+  constructor(private tvShowServive: TvshowsService) { }
 
   ngOnInit() {
+    this.tvShowServive.getUpComing()
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.upComing = res.results
+      })
   }
 
 }
