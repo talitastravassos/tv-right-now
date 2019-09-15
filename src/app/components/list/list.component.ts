@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import parse from 'date-fns/parse';
 
 @Component({
@@ -9,20 +9,31 @@ import parse from 'date-fns/parse';
 export class ListComponent {
 
   @Input() title: string
-  @Input() listData: any[]
+  @Input() listData: any
 
-  constructor() { }
+  @Output() change = new EventEmitter()
 
+  page = 1
+
+  constructor() {
+    console.log(this.page)
+  }
+  
   getImage(path){
     return "https://image.tmdb.org/t/p/w500" + path
   }
-
+  
   getNameWithoutSpace(name: string){
     return name.replace(/\s/g, '').toLowerCase()
   }
-
+  
   stringToDate(string){
     return parse(string, 'yyyy-mm-dd', new Date())
+  }
+  
+  onChange(){
+    this.change.emit(this.page + 1)
+
   }
 
 }

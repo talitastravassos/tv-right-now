@@ -8,16 +8,25 @@ import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 })
 export class TopRatedComponent implements OnInit {
 
-  topRated: any[]
+  topRated: any
   title: string = "Top Rated"
 
   constructor(private tvShowServive: TvshowsService) { }
 
-  ngOnInit() {
-    this.tvShowServive.getTopRated()
+  onPageChange(page){
+    console.log(page)
+    this.tvShowServive.getTopRated(page)
       .subscribe( (res: any) => {
         console.log(res)
-        this.topRated = res.results
+        this.topRated = res
+    })
+  }
+
+  ngOnInit() {
+    this.tvShowServive.getTopRated(1)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.topRated = res
       })
   }
 

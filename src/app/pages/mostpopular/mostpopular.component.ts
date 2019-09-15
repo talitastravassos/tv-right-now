@@ -8,16 +8,25 @@ import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 })
 export class MostPopularComponent implements OnInit {
 
-  mostPopular: any[]
+  mostPopular: any
   title: string = "Most Popular TV Shows"
 
   constructor(private tvShowServive: TvshowsService) { }
 
-  ngOnInit() {
-    this.tvShowServive.getMostPopular()
+  onPageChange(page){
+    console.log(page)
+    this.tvShowServive.getMostPopular(page)
       .subscribe( (res: any) => {
         console.log(res)
-        this.mostPopular = res.results
+        this.mostPopular = res
+    })
+  }
+
+  ngOnInit() {
+    this.tvShowServive.getMostPopular(1)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.mostPopular = res
       })
   }
 

@@ -8,16 +8,25 @@ import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 })
 export class UpComingComponent implements OnInit {
 
-  upComing: any[]
+  upComing: any
   title: string = "Up Coming This Week"
 
   constructor(private tvShowServive: TvshowsService) { }
 
-  ngOnInit() {
-    this.tvShowServive.getUpComing()
+  onPageChange(page){
+    console.log(page)
+    this.tvShowServive.getUpComing(page)
       .subscribe( (res: any) => {
         console.log(res)
-        this.upComing = res.results
+        this.upComing = res
+    })
+  }
+
+  ngOnInit() {
+    this.tvShowServive.getUpComing(1)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.upComing = res
       })
   }
 

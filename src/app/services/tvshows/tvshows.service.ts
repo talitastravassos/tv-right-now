@@ -11,20 +11,20 @@ export class TvshowsService {
 
   constructor(private http: HttpClient) { }
 
-  getAiringToday(){
-    return this.http.get(`${this.base_url}airing_today?api_key=${this.api_key}`)
+  getAiringToday(page: number){
+    return this.http.get(`${this.base_url}airing_today?api_key=${this.api_key}&page=${page}`)
   }
 
-  getMostPopular(){
-    return this.http.get(`${this.base_url}popular?api_key=${this.api_key}`)
+  getMostPopular(page: number){
+    return this.http.get(`${this.base_url}popular?api_key=${this.api_key}&page=${page}`)
   }
 
-  getUpComing(){
-    return this.http.get(`${this.base_url}on_the_air?api_key=${this.api_key}`)
+  getUpComing(page: number){
+    return this.http.get(`${this.base_url}on_the_air?api_key=${this.api_key}&page=${page}`)
   }
 
-  getTopRated(){
-    return this.http.get(`${this.base_url}top_rated?api_key=${this.api_key}`)
+  getTopRated(page: number){
+    return this.http.get(`${this.base_url}top_rated?api_key=${this.api_key}&page=${page}`)
   }
 
   getDetails(id){
