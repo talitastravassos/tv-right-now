@@ -1,6 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import parse from 'date-fns/parse';
-
 @Component({
   selector: 'list',
   templateUrl: './list.component.html',
@@ -17,18 +15,6 @@ export class ListComponent {
 
   constructor() {
     console.log(this.page)
-  }
-  
-  getImage(path){
-    return "https://image.tmdb.org/t/p/w500" + path
-  }
-  
-  getNameWithoutSpace(name: string){
-    return name.replace(/\s/g, '').toLowerCase()
-  }
-  
-  stringToDate(string){
-    return parse(string, 'yyyy-mm-dd', new Date())
   }
   
   onChange(){

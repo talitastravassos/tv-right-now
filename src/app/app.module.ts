@@ -17,6 +17,7 @@ import { ListComponent } from './components/list/list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MostPopularComponent } from './pages/mostpopular/mostpopular.component';
 import { UpComingComponent } from './pages/upcoming/upcoming.component';
+import { ShowCardComponent } from './components/show-card/show-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { UpComingComponent } from './pages/upcoming/upcoming.component';
     TopRatedComponent,
     ShowDetailsComponent,
     DetailsComponent,
-    ListComponent
+    ListComponent,
+    ShowCardComponent
   ],
   imports: [
     BrowserModule,
