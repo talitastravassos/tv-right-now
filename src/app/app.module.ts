@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateFnsModule } from 'ngx-date-fns';
+import { MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MostPopularComponent } from './pages/mostpopular/mostpopular.component';
 import { UpComingComponent } from './pages/upcoming/upcoming.component';
 import { ShowCardComponent } from './components/show-card/show-card.component';
+import { SearchComponent } from './components/search/search.component';
+import { ResultComponent } from './pages/result/result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,9 @@ import { ShowCardComponent } from './components/show-card/show-card.component';
     ShowDetailsComponent,
     DetailsComponent,
     ListComponent,
-    ShowCardComponent
+    ShowCardComponent,
+    SearchComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,9 @@ import { ShowCardComponent } from './components/show-card/show-card.component';
     FormsModule,
     AppRoutingModule,
     NgbModule,
+    MatInputModule, 
+    MatFormFieldModule,
+    MatIconModule,
     DateFnsModule.forRoot()
   ],
   providers: [],

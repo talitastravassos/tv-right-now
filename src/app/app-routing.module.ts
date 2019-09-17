@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { TopRatedComponent } from './pages/top-rated/top-rated.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { ResultComponent } from './pages/result/result.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   { 
     path: "toprated", 
     component: TopRatedComponent 
+  },
+  { 
+    path: "search", 
+    component: ResultComponent 
   },
   { 
     path: "details/:name/:id", 
