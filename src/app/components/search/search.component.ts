@@ -1,7 +1,9 @@
+import * as FetchResultsActions from './../../store/actions';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'search',
@@ -15,7 +17,8 @@ export class SearchComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private tvshowService: TvshowsService) { }
+    private tvshowService: TvshowsService,
+    private store: Store<{shows: any}>) { }
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
@@ -24,8 +27,9 @@ export class SearchComponent implements OnInit {
 
     this.searchForm.valueChanges.subscribe( res => {
       this.tvshowService.search(res.search, 1)
-        .subscribe( res => {
+        .subscribe( (res: any) => {
           console.log("search: ", res)
+          this.store.dispatch(new FetchResultsActions.FetchResults(res.results))
           this.router.navigate(['/search'])
         })
       // console.log(res)

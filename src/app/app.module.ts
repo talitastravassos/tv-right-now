@@ -4,6 +4,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateFnsModule } from 'ngx-date-fns';
 import { MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material'
 
+import { StoreModule } from '@ngrx/store';
+import { ShowsReducer } from './store/reducers';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -47,7 +50,8 @@ import { ResultComponent } from './pages/result/result.component';
     MatInputModule, 
     MatFormFieldModule,
     MatIconModule,
-    DateFnsModule.forRoot()
+    DateFnsModule.forRoot(),
+    StoreModule.forRoot({shows: ShowsReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
