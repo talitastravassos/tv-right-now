@@ -1,12 +1,12 @@
 <div class="card" [routerLink]="['/details', getNameWithoutSpace(show.name), show.id]">
     <div class="row no-gutters">
-        <div class="col-md-4  m-auto">
+        <div class="col-md-4  m-auto box-image">
             <img src="{{ getImage(show.poster_path) }}" class="card-img" alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">{{show.name}} 
-                    <!-- ({{ stringToDate(show.first_air_date) | dfnsFormat: 'yyyy' }}) -->
+                    ({{ stringToDate(show.first_air_date) }})
                 </h5>
                 <p class="card-text module line-clamp">{{ show.overview }}</p>
                 <p class="card-text m-0"><small class="text-muted">Country: <span

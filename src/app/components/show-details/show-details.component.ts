@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 import { ActivatedRoute } from '@angular/router';
-import parse from 'date-fns/parse'
+import { parse } from 'date-fns'
 
 @Component({
   selector: 'show-details',

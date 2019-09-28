@@ -14,4 +14,7 @@
 
 .card {
   cursor: pointer;
+  max-height: 320px;
+  min-height: 310px;
 }
+

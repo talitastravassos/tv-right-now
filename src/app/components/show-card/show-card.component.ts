@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import parse from 'date-fns/parse';
+import { parse, getYear } from 'date-fns'
+
 
 @Component({
   selector: 'show-card',
@@ -25,7 +26,7 @@ export class ShowCardComponent implements OnInit {
   }
   
   stringToDate(string){
-    return parse(string, 'yyyy-mm-dd', new Date())
+    return getYear(parse(string, 'yyyy-mm-dd', new Date()))
   }
 
   ngOnInit() {
