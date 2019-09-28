@@ -1,4 +1,4 @@
-import * as FetchResultsActions from './../../store/actions';
+import * as FetchActions from './../../store/actions';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
       this.tvshowService.search(res.search, 1)
         .subscribe( (res: any) => {
           console.log("search: ", res)
-          this.store.dispatch(new FetchResultsActions.FetchResults(res.results))
+          this.store.dispatch(new FetchActions.FetchSearch(res.results))
           this.router.navigate(['/search'])
         })
       // console.log(res)

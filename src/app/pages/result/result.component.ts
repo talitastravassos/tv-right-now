@@ -17,12 +17,9 @@ export class ResultComponent implements OnInit {
   constructor(
     public activatedRoute: ActivatedRoute,
     private tvshowsService: TvshowsService,
-    private store: Store<{shows: any}>,
-    private state: State<{shows: any}>) { }
+    private store: Store<{shows: any}>) { }
 
   ngOnInit() {
-    // this.searchState = this.state.getValue()
-    // this.searchState = this.state.getValue()
     this.store.select("shows").subscribe( state => this.searchState = state)
 
     console.log(this.searchState)

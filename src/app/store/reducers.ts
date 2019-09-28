@@ -1,16 +1,40 @@
-import * as FetchResultsActions from "./actions";
+import * as FetchActions from "./actions";
 
 const initialState = {
-    searchShows: []
+    searchShows: [],
+    airingToday: [],
+    mostPopular: [],
+    topRated: [],
+    upComing: []
 }
 
-export function ShowsReducer(state = initialState, action: FetchResultsActions.FetchResultsActions){
+export function ShowsReducer(state = initialState, action: FetchActions.FetchActions){
     switch (action.type) {
-        case FetchResultsActions.FETCH_RESULTS:
+        case FetchActions.FETCH_SEARCH:
             return {
                 ...state,
                 searchShows: action.payload
             }
+        case FetchActions.FETCH_AIRING_TODAY:
+            return {
+                ...state,
+                airingToday: action.payload
+            }
+        case FetchActions.FETCH_MOST_POPULAR:
+            return {
+                ...state,
+                mostPopular: action.payload
+            }
+        case FetchActions.FETCH_TOP_RATED:
+            return {
+                ...state,
+                topRated: action.payload
+            }
+        case FetchActions.FETCH_UP_COMING:
+            return {
+                ...state,
+                upComing: action.payload
+            }                    
         default:
             return state
     }
