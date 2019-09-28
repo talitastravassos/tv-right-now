@@ -27,11 +27,8 @@ export class SearchComponent implements OnInit {
 
     this.searchForm.valueChanges.subscribe( res => {
       this.tvshowService.search(res.search, 1)
-        .subscribe( (res: any) => {
-          console.log("search: ", res)
-          this.store.dispatch(new FetchActions.FetchSearch(res.results))
-          this.router.navigate(['/search'])
-        })
+        
+      this.router.navigate(['/search'])
       // console.log(res)
     })
   }

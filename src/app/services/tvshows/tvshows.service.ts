@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as FetchActions from './../../store/actions';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +12,40 @@ export class TvshowsService {
   private base_url = "https://api.themoviedb.org/3/"
   private api_key = "5f79797eded17e8dd6a8b2f47eb10756"
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private store: Store<{shows: any}>) { }
 
   getAiringToday(page: number){
-    return this.http.get(`${this.base_url}tv/airing_today?api_key=${this.api_key}&page=${page}`)
+    this.http.get(`${this.base_url}tv/airing_today?api_key=${this.api_key}&page=${page}`)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.store.dispatch(new FetchActions.FetchAiringToday(res))
+    })
   }
 
   getMostPopular(page: number){
-    return this.http.get(`${this.base_url}tv/popular?api_key=${this.api_key}&page=${page}`)
+    this.http.get(`${this.base_url}tv/popular?api_key=${this.api_key}&page=${page}`)
+    .subscribe( (res: any) => {
+      console.log(res)
+      this.store.dispatch(new FetchActions.FetchMostPopular(res))
+    })
   }
 
   getUpComing(page: number){
-    return this.http.get(`${this.base_url}tv/on_the_air?api_key=${this.api_key}&page=${page}`)
+    this.http.get(`${this.base_url}tv/on_the_air?api_key=${this.api_key}&page=${page}`)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.store.dispatch(new FetchActions.FetchUpComing(res))
+      })
   }
 
   getTopRated(page: number){
-    return this.http.get(`${this.base_url}tv/top_rated?api_key=${this.api_key}&page=${page}`)
+    this.http.get(`${this.base_url}tv/top_rated?api_key=${this.api_key}&page=${page}`)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.store.dispatch(new FetchActions.FetchTopRated(res))
+      })
   }
 
   getDetails(id){
@@ -32,7 +53,11 @@ export class TvshowsService {
   }
 
   search(name, page){
-    return this.http.get(`${this.base_url}search/tv?api_key=${this.api_key}&query=${name}&page=${page}`)
+    this.http.get(`${this.base_url}search/tv?api_key=${this.api_key}&query=${name}&page=${page}`)
+      .subscribe( (res: any) => {
+        console.log("search: ", res)
+        this.store.dispatch(new FetchActions.FetchSearch(res))
+      })
   }
 
 

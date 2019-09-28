@@ -4,6 +4,6 @@
         <div class="col-lg-5 col-10 p-0 m-3" *ngFor="let show of listData.results">
             <show-card [show]="show"></show-card>
         </div>
-        <ngb-pagination [collectionSize]="70" [(page)]="page" (click)="onChange($event)"></ngb-pagination>
+        <ngb-pagination [collectionSize]="70" [(page)]="page" (click)="onChange($event)" *ngIf="!isSearch"></ngb-pagination>
     </div>
 </div>

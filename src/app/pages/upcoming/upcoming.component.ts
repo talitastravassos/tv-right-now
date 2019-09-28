@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
-import * as FetchActions from './../../store/actions';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
@@ -19,23 +18,15 @@ export class UpComingComponent implements OnInit {
     private store: Store<{shows: any}>) { }
 
   onPageChange(page){
-    console.log(page)
     this.tvShowServive.getUpComing(page)
-      .subscribe( (res: any) => {
-        console.log(res)
-        this.store.dispatch(new FetchActions.FetchUpComing(res))
-        this.store.select("shows").subscribe( state => this.upComing = state.upComing)
-        
-    })
+      
+    this.store.select("shows").subscribe( state => this.upComing = state.upComing)
   }
 
   ngOnInit() {
     this.tvShowServive.getUpComing(1)
-      .subscribe( (res: any) => {
-        console.log(res)
-        this.store.dispatch(new FetchActions.FetchUpComing(res))
-        this.store.select("shows").subscribe( state => this.upComing = state.upComing)
-      })
+      
+    this.store.select("shows").subscribe( state => this.upComing = state.upComing)
   }
 
 }

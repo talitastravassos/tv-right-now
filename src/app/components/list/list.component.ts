@@ -8,6 +8,7 @@ export class ListComponent {
 
   @Input() title: string
   @Input() listData: any
+  @Input() isSearch: boolean
 
   @Output() change = new EventEmitter()
 

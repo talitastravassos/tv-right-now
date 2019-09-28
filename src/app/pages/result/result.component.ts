@@ -1,7 +1,6 @@
-import { TvshowsService } from './../../services/tvshows/tvshows.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store, State } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -16,14 +15,11 @@ export class ResultComponent implements OnInit {
 
   constructor(
     public activatedRoute: ActivatedRoute,
-    private tvshowsService: TvshowsService,
     private store: Store<{shows: any}>) { }
 
   ngOnInit() {
-    this.store.select("shows").subscribe( state => this.searchState = state)
+    this.store.select("shows").subscribe( state => this.searchState = state.searchShows)
 
-    console.log(this.searchState)
-    
   }
 
 }
