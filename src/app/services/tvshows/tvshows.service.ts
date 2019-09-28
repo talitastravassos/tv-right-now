@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as FetchActions from './../../store/actions';
-import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 @Injectable({
@@ -49,7 +48,11 @@ export class TvshowsService {
   }
 
   getDetails(id){
-    return this.http.get(`${this.base_url}tv/${id}?api_key=${this.api_key}`)
+    this.http.get(`${this.base_url}tv/${id}?api_key=${this.api_key}`)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.store.dispatch(new FetchActions.FetchShowDetails(res))
+      })
   }
 
   search(name, page){

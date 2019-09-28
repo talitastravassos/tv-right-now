@@ -5,10 +5,11 @@ const initialState = {
     airingToday: [],
     mostPopular: [],
     topRated: [],
-    upComing: []
+    upComing: [],
+    showDetails: {}
 }
 
-export function ShowsReducer(state = initialState, action: FetchActions.FetchActions){
+export function ShowsReducer(state = initialState, action: FetchActions.FetchActions) {
     switch (action.type) {
         case FetchActions.FETCH_SEARCH:
             return {
@@ -34,7 +35,12 @@ export function ShowsReducer(state = initialState, action: FetchActions.FetchAct
             return {
                 ...state,
                 upComing: action.payload
-            }                    
+            }
+        case FetchActions.FETCH_SHOW_DETAILS:
+            return {
+                ...state,
+                showDetails: action.payload
+            }
         default:
             return state
     }

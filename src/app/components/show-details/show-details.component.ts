@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 import { ActivatedRoute } from '@angular/router';
 import { parse } from 'date-fns'
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'show-details',
@@ -11,19 +13,12 @@ import { parse } from 'date-fns'
 export class ShowDetailsComponent implements OnInit {
 
   id: number
-  show: any
+  showDetails: Observable<{shows: any}>
 
   constructor(
     private tvshowService: TvshowsService,
-    private activateRoute: ActivatedRoute) { }
-
-  getShow(id){
-    this.tvshowService.getDetails(id)
-      .subscribe( (res: any) => {
-        console.log(res)
-        this.show = res
-      })
-  }
+    private activateRoute: ActivatedRoute,
+    private store: Store<{shows: any}>) { }
   
   getImage(path){
     return "https://image.tmdb.org/t/p/w780" + path
@@ -40,14 +35,8 @@ export class ShowDetailsComponent implements OnInit {
         this.id = +param.get("id")
       })
 
-    this.tvshowService.getDetails(this.id)
-      .subscribe( (res: any) => {
-        console.log(res)
-        this.show = res
-      })  
-
-    // this.getShow(this.id)
-    // console.log(this.show)
+      this.tvshowService.getDetails(this.id)
+      this.store.select("shows").subscribe( state => this.showDetails = state.showDetails)
 
   }
 
