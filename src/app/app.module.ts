@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DateFnsModule } from 'ngx-date-fns';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { MatInputModule, MatFormFieldModule, MatIconModule } from '@angular/material'
 
 import { StoreModule } from '@ngrx/store';
@@ -24,6 +25,7 @@ import { UpComingComponent } from './pages/upcoming/upcoming.component';
 import { ShowCardComponent } from './components/show-card/show-card.component';
 import { SearchComponent } from './components/search/search.component';
 import { ResultComponent } from './pages/result/result.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { ResultComponent } from './pages/result/result.component';
     ListComponent,
     ShowCardComponent,
     SearchComponent,
-    ResultComponent
+    ResultComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { ResultComponent } from './pages/result/result.component';
     MatFormFieldModule,
     MatIconModule,
     DateFnsModule.forRoot(),
-    StoreModule.forRoot({shows: ShowsReducer})
+    StoreModule.forRoot({shows: ShowsReducer}),
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
