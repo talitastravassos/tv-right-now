@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h2 class="display-2 text-center jumbotron-fluid"> {{ title }} </h2>
+    <h2 class="display-2 text-left m-4"> {{ title }} </h2>
     <div class="row justify-content-center" *ngIf="listData != undefined">
         <div class="col-lg-5 col-10 p-0 m-3" *ngFor="let show of listData.results">
             <show-card [show]="show"></show-card>
