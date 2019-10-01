@@ -55,6 +55,14 @@ export class TvshowsService {
       })
   }
 
+  getCreditsDetails(id){
+    this.http.get(`${this.base_url}tv/${id}/credits?api_key=${this.api_key}`)
+      .subscribe( (res: any) => {
+        console.log(res)
+        this.store.dispatch(new FetchActions.FetchShowCredits(res))
+      })
+  }
+
   search(name, page){
     this.http.get(`${this.base_url}search/tv?api_key=${this.api_key}&query=${name}&page=${page}`)
       .subscribe( (res: any) => {
