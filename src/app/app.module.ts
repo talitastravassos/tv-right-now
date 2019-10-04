@@ -26,6 +26,7 @@ import { ShowCardComponent } from './components/show-card/show-card.component';
 import { SearchComponent } from './components/search/search.component';
 import { ResultComponent } from './pages/result/result.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ShowCardComponent,
     SearchComponent,
     ResultComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
