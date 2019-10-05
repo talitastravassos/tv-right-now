@@ -1,28 +1,39 @@
-<div class="container mt-4">
-    <div class="card" *ngIf="showDetails != undefined">
+<div class="container mt-5">
+    <div class="card shadow-sm" *ngIf="showDetails != undefined">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="{{ getImage(showDetails.poster_path) }}" class="card-img">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h2 class="card-title">{{ showDetails.name }} ({{ stringToDate(showDetails.first_air_date) | dfnsFormat: 'yyyy' }}) </h2>
+                    <h2 class="card-title"><strong>{{ showDetails.name }}
+                            ({{ stringToDate(showDetails.first_air_date) | dfnsFormat: 'yyyy' }})</strong></h2>
                     <p class="card-text mb-4">{{ showDetails.overview }}</p>
-                    <p class="card-text">Premiered: {{ stringToDate(showDetails.first_air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
+                    <p class="card-text">Premiered:
+                        {{ stringToDate(showDetails.first_air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
                     <p class="card-text">Popularity: {{ showDetails.popularity }} </p>
-                    <p class="card-text">Vote Average: {{ showDetails.vote_average }} | Votes: {{ showDetails.vote_count }} </p>
-                    <p class="card-text">Genres: <span class="badge badge-dark ml-1" *ngFor="let genre of showDetails.genres"> {{ genre.name }} </span> </p>
+                    <p class="card-text">Vote Average: {{ showDetails.vote_average }} | Votes:
+                        {{ showDetails.vote_count }} </p>
+                    <p class="card-text">Genres: <span class="badge badge-dark ml-1 p-2"
+                            *ngFor="let genre of showDetails.genres"> {{ genre.name }} </span> </p>
 
-                    <p class="card-text">Created by: <span *ngFor="let creator of showDetails.created_by">{{ creator.name }} </span> </p>
+                    <p class="card-text">Created by: <span
+                            *ngFor="let creator of showDetails.created_by">{{ creator.name }} </span> </p>
                     <p class="card-text">Episode Run Time: {{ showDetails.episode_run_time[0] }} minutes </p>
                     <p class="card-text">Language: {{ showDetails.languages[0] }} </p>
                     <p class="card-text">Country: {{ showDetails.origin_country[0]}} </p>
 
-                    <p class="card-text">Status: {{ showDetails.status }} </p>
+                    <p class="card-text">Status: <span class="badge badge-success p-2"
+                            *ngIf="showDetails.status === 'Returning Series'">{{ showDetails.status }}</span>
+                        <span class="badge badge-danger p-2"
+                            *ngIf="showDetails.status !== 'Returning Series'">{{ showDetails.status }}</span>
+                    </p>
                     <p class="card-text">Total of Episodes: {{ showDetails.number_of_episodes }} episodes </p>
                     <p class="card-text">Total of Seasons: {{ showDetails.number_of_seasons }} seasons </p>
-                    <p class="card-text">Last Air Date: {{ stringToDate(showDetails.last_air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
-                    <p class="card-text">Network: {{ showDetails.networks[0].name }} </p>
+                    <p class="card-text">Last Air Date:
+                        {{ stringToDate(showDetails.last_air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
+                    <p class="card-text">Network: <span
+                            class="badge badge-dark p-2">{{ showDetails.networks[0].name }}</span></p>
                 </div>
             </div>
         </div>
