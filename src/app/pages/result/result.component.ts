@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ResultComponent implements OnInit {
 
-  title: string = "Results"
+  title: string = "Search"
   searchState: Observable<{shows: any}>
 
   constructor(

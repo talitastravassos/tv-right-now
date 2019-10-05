@@ -27,6 +27,8 @@ import { SearchComponent } from './components/search/search.component';
 import { ResultComponent } from './pages/result/result.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListCastComponent } from './components/list-cast/list-cast.component';
+import { CastCardComponent } from './components/cast-card/cast-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { FooterComponent } from './components/footer/footer.component';
     SearchComponent,
     ResultComponent,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
+    ListCastComponent,
+    CastCardComponent
   ],
   imports: [
     BrowserModule,

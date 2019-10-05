@@ -25,7 +25,6 @@ export class ShowDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.store.select('shows').subscribe( state => this.showDetails = state.showDetails);
 
   }
