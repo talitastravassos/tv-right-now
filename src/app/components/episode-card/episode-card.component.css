@@ -13,8 +13,14 @@
 }
 
 .card {
-  /* cursor: pointer; */
   /* max-height: 320px; */
   min-height: 35rem;
   width: 30rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    min-height: 25rem;
+    width: 20rem;
+  }
 }
