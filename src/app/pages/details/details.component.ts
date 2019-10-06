@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TvshowsService } from 'src/app/services/tvshows/tvshows.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-details',
@@ -11,11 +12,12 @@ import { Observable } from 'rxjs';
 export class DetailsComponent implements OnInit {
 
   id: number;
-  showCredits: Observable<{shows: any}>;
+  showDetails: Observable<{shows: any}>;
 
   constructor(
     private tvshowService: TvshowsService,
-    private activateRoute: ActivatedRoute) { }
+    private activateRoute: ActivatedRoute,
+    private store: Store<{shows: any}>) { }
 
   getImage(path) {
     return 'https://image.tmdb.org/t/p/w780' + path;
@@ -30,6 +32,8 @@ export class DetailsComponent implements OnInit {
 
     this.tvshowService.getDetails(this.id);
     this.tvshowService.getCreditsDetails(this.id);
+
+    this.store.select('shows').subscribe( state => this.showDetails = state.showDetails);
 
   }
 }

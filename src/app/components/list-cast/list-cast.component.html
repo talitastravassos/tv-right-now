@@ -1,5 +1,5 @@
-<div class="container">
-    <h2 class="display-2 text-left"> Cast </h2>
+<div class="container mt-5">
+    <h2 class="display-4 text-left"> Cast </h2>
     <div class="d-flex flex-wrap justify-content-start" *ngIf="showCredits != undefined">
         <div class="m-2" *ngFor="let star of showCredits.cast">
             <cast-card [star]="star"></cast-card>

@@ -29,6 +29,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListCastComponent } from './components/list-cast/list-cast.component';
 import { CastCardComponent } from './components/cast-card/cast-card.component';
+import { EpisodeCardComponent } from './components/episode-card/episode-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { CastCardComponent } from './components/cast-card/cast-card.component';
     SpinnerComponent,
     FooterComponent,
     ListCastComponent,
-    CastCardComponent
+    CastCardComponent,
+    EpisodeCardComponent
   ],
   imports: [
     BrowserModule,

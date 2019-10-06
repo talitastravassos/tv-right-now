@@ -1,0 +1,10 @@
+<h2 class="display-5 text-left mt-5"> {{ title }} </h2>
+<div class="card shadow-sm">
+    <img src="{{ getImage(episode.still_path) }}" class="card-img-top" alt="Show poster">
+    <div class="card-body">
+        <h5 class="card-title"><strong>{{episode.name}} (S{{ episode.season_number }} | E{{ episode.episode_number }})</strong></h5>
+        <p class="card-text module line-clamp">{{ episode.overview }}</p>
+        <p class="card-text m-0">Date: {{ stringToDate(episode.air_date) | dfnsFormat: 'dd/mm/yyyy' }}</p>
+        <p class="card-text m-0">Vote Average: {{ episode.vote_average }}</p>    
+    </div>
+</div>

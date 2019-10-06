@@ -7,6 +7,7 @@ export const FETCH_UP_COMING = 'FETCH_UP_COMING';
 export const FETCH_TOP_RATED = 'FETCH_TOP_RATED';
 export const FETCH_SHOW_DETAILS = 'FETCH_SHOW_DETAILS';
 export const FETCH_SHOW_CREDITS = 'FETCH_SHOW_CREDITS';
+export const IS_LOADING = 'IS_LOADING';
 
 export class FetchSearch implements Action {
     readonly type = FETCH_SEARCH;
@@ -49,5 +50,11 @@ export class FetchShowCredits implements Action {
     constructor(public payload: any) { }
 }
 
+export class IsLoading implements Action {
+    readonly type = IS_LOADING;
+
+    constructor(public payload: any) { }
+}
+
 // tslint:disable-next-line: max-line-length
-export type FetchActions = FetchSearch | FetchAiringToday | FetchMostPopular | FetchUpComing | FetchTopRated | FetchShowDetails | FetchShowCredits;
+export type FetchActions = FetchSearch | FetchAiringToday | FetchMostPopular | FetchUpComing | FetchTopRated | FetchShowDetails | FetchShowCredits | IsLoading;

@@ -1,21 +1,11 @@
 <spinner></spinner>
 <show-details></show-details>
 
-<!-- cast details -->
 <list-cast></list-cast>
-<!-- <div class="container">
-  <div class="row justify-content-center" *ngIf="showCredits != undefined">
-      <div class="card" style="width: 18rem;" *ngFor="let star of showCredits.cast">
-          <img class="card-img-top" src="{{ getImage(star.profile_path) }}" alt="Card image cap" >
-          <div class="card-body">
-            <h5 class="card-title">{{ star.name }}</h5>
-            <p class="card-subtitle">{{ star.character }}</p>            
-          </div>
-      </div>
 
-  </div>
-
-</div> -->
-
+<div class="container d-flex flex-wrap justify-content-between">
+  <episode-card [episode]="showDetails.last_episode_to_air" [title]="'Last Episode'"></episode-card>
+  <episode-card *ngIf="showDetails.next_episode_to_air !== null" [episode]="showDetails.next_episode_to_air" [title]="'Next Episode'"></episode-card>
+</div>
 
 <app-footer></app-footer>

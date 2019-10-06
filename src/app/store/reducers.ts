@@ -1,6 +1,7 @@
 import * as FetchActions from './actions';
 
 const initialState = {
+    isLoading: false,
     searchShows: [],
     airingToday: [],
     mostPopular: [],
@@ -12,6 +13,11 @@ const initialState = {
 
 export function ShowsReducer(state = initialState, action: FetchActions.FetchActions) {
     switch (action.type) {
+        case FetchActions.IS_LOADING:
+            return {
+                ...state,
+                isLoading: action.payload
+            };
         case FetchActions.FETCH_SEARCH:
             return {
                 ...state,

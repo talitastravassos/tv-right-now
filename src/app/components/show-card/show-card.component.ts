@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { parse, getYear } from 'date-fns'
+import { parse, getYear } from 'date-fns';
 
 
 @Component({
