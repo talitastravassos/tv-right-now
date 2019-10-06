@@ -12,6 +12,9 @@ export class CastCardComponent implements OnInit {
   constructor() { }
 
   getImage(path) {
+    if(path === null){
+      return "https://www.nilfiskcfm.com/wp-content/uploads/2016/12/placeholder.png";
+    }
     return 'https://image.tmdb.org/t/p/w780' + path;
   }
 
