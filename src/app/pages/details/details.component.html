@@ -4,7 +4,7 @@
 <list-cast></list-cast>
 
 <div class="container d-flex flex-wrap justify-content-between">
-  <episode-card [episode]="showDetails.last_episode_to_air" [title]="'Last Episode'"></episode-card>
+  <episode-card *ngIf="showDetails.last_episode_to_air !== null" [episode]="showDetails.last_episode_to_air" [title]="'Last Episode'"></episode-card>
   <episode-card *ngIf="showDetails.next_episode_to_air !== null" [episode]="showDetails.next_episode_to_air" [title]="'Next Episode'"></episode-card>
 </div>
 
