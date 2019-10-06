@@ -1,16 +1,3 @@
 .card-text{
     margin: 0.2em
 }
-
-.card-img{
-    height: 750px;
-    width: 475px;
-}
-
-@media only screen and (max-width: 600px) {
-    .card-img{
-        height: 800px;
-        width: 505px;
-    }
-    
-}
