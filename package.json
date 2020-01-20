@@ -23,7 +23,7 @@
     "@angular/router": "~8.2.4",
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "@ngrx/store": "^8.3.0",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "date-fns": "^2.4.0",
     "ngx-date-fns": "^5.0.0",
     "ngx-spinner": "^8.0.3",
